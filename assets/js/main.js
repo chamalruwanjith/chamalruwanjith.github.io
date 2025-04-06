@@ -169,8 +169,12 @@
         itemSelector: '.portfolio-item'
       });
 
-      let portfolioFilters = select('#portfolio-flters li', true);
+      // Keep track of the current active filters
+      let currentTimelineFilter = '*';
+      let currentCategoryFilter = '*';
 
+      // Category filters (Web applications, Odoo Module, Website)
+      let portfolioFilters = select('#portfolio-flters li', true);
       on('click', '#portfolio-flters li', function(e) {
         e.preventDefault();
         portfolioFilters.forEach(function(el) {
@@ -178,19 +182,57 @@
         });
         this.classList.add('filter-active');
 
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+        currentCategoryFilter = this.getAttribute('data-filter');
+        applyFilters();
+      }, true);
+
+      // Timeline filters (New vs Older)
+      let timelineFilters = select('#timeline-flters li', true);
+      on('click', '#timeline-flters li', function(e) {
+        e.preventDefault();
+        timelineFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
         });
+        this.classList.add('filter-active');
+
+        currentTimelineFilter = this.getAttribute('data-filter');
+        applyFilters();
+      }, true);
+
+      // Function to apply both filters
+      function applyFilters() {
+        let combinedFilter;
+
+        if (currentTimelineFilter === '*' && currentCategoryFilter === '*') {
+          // If both are "ALL", show everything
+          combinedFilter = '*';
+        } else if (currentTimelineFilter === '*') {
+          // If only timeline is "ALL", filter by category only
+          combinedFilter = currentCategoryFilter;
+        } else if (currentCategoryFilter === '*') {
+          // If only category is "ALL", filter by timeline only
+          combinedFilter = currentTimelineFilter;
+        } else {
+          // Filter by both timeline AND category
+          // This shows items that match BOTH filters by checking if elements have both classes
+          combinedFilter = function(itemElem) {
+            return itemElem.matches(currentTimelineFilter) && itemElem.matches(currentCategoryFilter);
+          };
+        }
+
+        portfolioIsotope.arrange({
+          filter: combinedFilter
+        });
+
         portfolioIsotope.on('arrangeComplete', function() {
           AOS.refresh()
         });
-      }, true);
+      }
     }
-
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
@@ -255,8 +297,8 @@
   });
 
   /**
-   * Initiate Pure Counter 
+   * Initiate Pure Counter
    */
   new PureCounter();
 
-})()
+})();
