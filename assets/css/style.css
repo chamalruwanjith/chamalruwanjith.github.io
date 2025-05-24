@@ -1291,36 +1291,50 @@ section {
 # Dark Mode Toggle Button
 --------------------------------------------------------------*/
 .dark-mode-toggle-container {
-  /* Container styling if needed, for now relying on text-center and mt-auto from HTML */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
 }
 
 #darkModeToggle {
-  border-color: var(--nav-text-color); /* Using a subtle border color from existing variables */
-  color: var(--nav-text-color); /* Icon color */
-  padding: 0.25rem 0.5rem; /* Smaller padding */
-  font-size: 0.9rem; /* Smaller font size for the icon */
-  margin-top: auto; /* Pushes to the bottom of flex container */
-  margin-bottom: 1rem; /* Some spacing from the bottom edge of the header */
+  background-color: var(--secondary-bg-color); /* Use a theme-aware background */
+  border: 1px solid var(--nav-icon-color); /* Use a theme-aware border */
+  color: var(--nav-icon-color); /* Icon color, consistent with nav icons */
+  padding: 0.5rem 0.75rem; /* Adjusted padding */
+  font-size: 1rem; /* Adjusted font size */
+  border-radius: 50px; /* Circular button */
+  width: 40px; /* Explicit width */
+  height: 40px; /* Explicit height */
+  display: inline-flex; /* For centering icon */
+  align-items: center; /* For centering icon */
+  justify-content: center; /* For centering icon */
+  transition: all 0.3s ease-in-out;
 }
 
 #darkModeToggle:hover {
-  border-color: var(--nav-active-icon-color);
-  color: var(--nav-active-icon-color);
-  background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+  background-color: var(--nav-active-icon-color); /* Use nav active icon color for hover background */
+  color: var(--header-bg-color); /* Icon color on hover, ensure contrast */
+  border-color: var(--nav-active-icon-color); /* Border color on hover */
 }
 
 #darkModeToggle i {
-  line-height: 1; /* Ensure icon is vertically centered if it has extra space */
+  line-height: 1; /* Ensure icon is vertically centered */
 }
 
 /* Specific styles for dark mode toggle button when dark mode is active */
+/* The general #darkModeToggle rules should adapt well due to variable changes. */
+/* We can add specific overrides if needed, but let's see how variables handle it first. */
+/* For example, hover colors might need specific dark mode considerations if the above isn't ideal */
+
 body.dark-mode #darkModeToggle {
-  border-color: var(--nav-text-color); /* Keep consistent with light mode or change if needed */
-  color: var(--nav-text-color);
+  background-color: var(--secondary-bg-color); /* Adapts to dark secondary bg */
+  border: 1px solid var(--nav-icon-color);   /* Adapts to dark nav icon color */
+  color: var(--nav-icon-color);            /* Adapts to dark nav icon color */
 }
 
 body.dark-mode #darkModeToggle:hover {
-  border-color: var(--nav-active-icon-color);
-  color: var(--nav-active-icon-color);
-  background-color: rgba(0, 0, 0, 0.2); /* Slight dark background on hover in dark mode */
+  background-color: var(--nav-active-icon-color); /* Adapts to dark nav active icon color */
+  color: var(--header-bg-color); /* Ensure this provides good contrast on dark active icon color */
+  border-color: var(--nav-active-icon-color);   /* Adapts */
 }
