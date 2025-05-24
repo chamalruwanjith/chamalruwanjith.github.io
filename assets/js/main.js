@@ -301,4 +301,51 @@
    */
   new PureCounter();
 
+  /**
+   * Dark Mode Toggle Logic
+   */
+  const darkModeToggle = select('#darkModeToggle');
+  const body = select('body');
+
+  // Helper function to update the toggle icon
+  const updateDarkModeIcon = (isDarkMode) => {
+    if (darkModeToggle) {
+      const icon = darkModeToggle.querySelector('i');
+      if (icon) {
+        if (isDarkMode) {
+          icon.classList.remove('bi-moon');
+          icon.classList.add('bi-sun');
+        } else {
+          icon.classList.remove('bi-sun');
+          icon.classList.add('bi-moon');
+        }
+      }
+    }
+  };
+
+  // Function to load theme preference from localStorage
+  const loadThemePreference = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      updateDarkModeIcon(true);
+    } else {
+      body.classList.remove('dark-mode'); // Ensure it's not there if 'light' or null
+      updateDarkModeIcon(false);
+    }
+  };
+
+  // Event listener for the toggle button
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDarkModeNow = body.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDarkModeNow ? 'dark' : 'light');
+      updateDarkModeIcon(isDarkModeNow);
+    });
+  }
+
+  // Load theme preference on initial script load
+  window.addEventListener('load', loadThemePreference);
+
 })();

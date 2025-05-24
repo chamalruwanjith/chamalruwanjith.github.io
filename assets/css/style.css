@@ -7,20 +7,145 @@
 */
 
 /*--------------------------------------------------------------
+# CSS Variables
+--------------------------------------------------------------*/
+:root {
+  --primary-bg-color: #fff;
+  --secondary-bg-color: #f5f8fd;
+  --header-bg-color: #040b14;
+  --text-color: #272829;
+  --heading-color: #173b6c;
+  --link-color: #149ddd;
+  --link-hover-color: #37b3ed;
+  --icon-color: #fff;
+  --icon-bg-color: #149ddd;
+  --icon-hover-bg-color: #fff;
+  --icon-hover-color: #149ddd;
+  --nav-text-color: #a8a9b4;
+  --nav-icon-color: #6f7180;
+  --nav-active-text-color: #fff;
+  --nav-active-icon-color: #149ddd;
+  --timeline-filter-bg-color: #149ddd;
+  --timeline-filter-text-color: #fff;
+  --hero-text-color: #fff;
+  --hero-overlay-bg-color: rgba(5, 13, 24, 0.3);
+  --profile-border-color: #2c2f3f;
+  --social-links-bg-color: #212431;
+  --social-links-hover-bg-color: #149ddd;
+  --facts-count-color: #050d18;
+  --facts-text-color: #122f57;
+  --skills-bar-bg-color: #dce8f8;
+  --skills-bar-fill-color: #149ddd;
+  --resume-item-border-color: #1f5297;
+  --resume-item-bg-color: #e4edf9;
+  --portfolio-flters-bg-color: #fff;
+  --portfolio-flters-text-color: #272829;
+  --portfolio-flters-active-text-color: #149ddd;
+  --portfolio-wrap-bg-color: rgba(255, 255, 255, 0.5);
+  --portfolio-links-bg-color: rgba(20, 157, 221, 0.75);
+  --portfolio-links-hover-bg-color: rgba(20, 157, 221, 0.95);
+  --portfolio-details-box-shadow-color: rgba(5, 13, 24, 0.08);
+  --portfolio-details-border-color: #eee;
+  --testimonial-item-text-color: #111;
+  --testimonial-item-meta-color: #999;
+  --testimonial-item-quote-icon-color: #c3e8fa;
+  --testimonial-item-bg-color: #fff;
+  --testimonial-item-box-shadow-color: rgba(0, 0, 0, 0.1);
+  --contact-info-bg-color: #fff;
+  --contact-info-box-shadow-color: rgba(0, 0, 0, 0.12);
+  --contact-info-icon-bg-color: #dff3fc;
+  --contact-info-icon-color: #149ddd;
+  --contact-info-icon-hover-bg-color: #149ddd;
+  --contact-info-icon-hover-text-color: #fff;
+  --contact-form-bg-color: #fff;
+  --contact-form-box-shadow-color: rgba(0, 0, 0, 0.12);
+  --contact-form-button-bg-color: #149ddd;
+  --contact-form-button-text-color: #fff;
+  --contact-form-button-hover-bg-color: #37b3ed;
+  --breadcrumbs-bg-color: #f9f9f9;
+  --breadcrumbs-link-color: #0e2442;
+  --footer-bg-color: #040b14;
+  --footer-text-color: #f4f6fd;
+  --footer-credits-text-color: #eaebf0;
+}
+
+body.dark-mode {
+  --primary-bg-color: #1a1a1a;
+  --secondary-bg-color: #2c2c2c;
+  --header-bg-color: #000;
+  --text-color: #f0f0f0;
+  --heading-color: #ccc;
+  --link-color: #4db8ff;
+  --link-hover-color: #80cfff;
+  --icon-color: #f0f0f0;
+  --icon-bg-color: #4db8ff;
+  --icon-hover-bg-color: #1a1a1a;
+  --icon-hover-color: #4db8ff;
+  --nav-text-color: #ccc;
+  --nav-icon-color: #aaa;
+  --nav-active-text-color: #f0f0f0;
+  --nav-active-icon-color: #4db8ff;
+  --timeline-filter-bg-color: #4db8ff;
+  --timeline-filter-text-color: #1a1a1a;
+  --hero-text-color: #f0f0f0;
+  --hero-overlay-bg-color: rgba(0, 0, 0, 0.7);
+  --profile-border-color: #444;
+  --social-links-bg-color: #333;
+  --social-links-hover-bg-color: #4db8ff;
+  --facts-count-color: #f0f0f0;
+  --facts-text-color: #ccc;
+  --skills-bar-bg-color: #444;
+  --skills-bar-fill-color: #4db8ff;
+  --resume-item-border-color: #4db8ff;
+  --resume-item-bg-color: #333;
+  --portfolio-flters-bg-color: #2c2c2c;
+  --portfolio-flters-text-color: #f0f0f0;
+  --portfolio-flters-active-text-color: #4db8ff;
+  --portfolio-wrap-bg-color: rgba(0, 0, 0, 0.5);
+  --portfolio-links-bg-color: rgba(77, 184, 255, 0.75);
+  --portfolio-links-hover-bg-color: rgba(77, 184, 255, 0.95);
+  --portfolio-details-box-shadow-color: rgba(255, 255, 255, 0.08);
+  --portfolio-details-border-color: #444;
+  --testimonial-item-text-color: #f0f0f0;
+  --testimonial-item-meta-color: #aaa;
+  --testimonial-item-quote-icon-color: #4db8ff;
+  --testimonial-item-bg-color: #2c2c2c;
+  --testimonial-item-box-shadow-color: rgba(255, 255, 255, 0.1);
+  --contact-info-bg-color: #2c2c2c;
+  --contact-info-box-shadow-color: rgba(255, 255, 255, 0.12);
+  --contact-info-icon-bg-color: #444;
+  --contact-info-icon-color: #4db8ff;
+  --contact-info-icon-hover-bg-color: #4db8ff;
+  --contact-info-icon-hover-text-color: #1a1a1a;
+  --contact-form-bg-color: #2c2c2c;
+  --contact-form-box-shadow-color: rgba(255, 255, 255, 0.12);
+  --contact-form-button-bg-color: #4db8ff;
+  --contact-form-button-text-color: #1a1a1a;
+  --contact-form-button-hover-bg-color: #80cfff;
+  --breadcrumbs-bg-color: #2c2c2c;
+  --breadcrumbs-link-color: #ccc;
+  --footer-bg-color: #000;
+  --footer-text-color: #ccc;
+  --footer-credits-text-color: #aaa;
+}
+
+
+/*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #272829;
+  color: var(--text-color);
+  background-color: var(--primary-bg-color); /* Added background color */
 }
 
 a {
-  color: #149ddd;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 a:hover {
-  color: #37b3ed;
+  color: var(--link-hover-color);
   text-decoration: none;
 }
 
@@ -43,7 +168,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #149ddd;
+  background: var(--icon-bg-color);
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -52,13 +177,13 @@ h6 {
 
 .back-to-top i {
   font-size: 28px;
-  color: #fff;
+  color: var(--icon-color);
   line-height: 0;
 }
 
 .back-to-top:hover {
-  background: #2eafec;
-  color: #fff;
+  background: var(--icon-hover-bg-color); /* Updated to use variables */
+  color: var(--icon-hover-color); /* Updated to use variables */
 }
 
 .back-to-top.active {
@@ -79,7 +204,7 @@ h6 {
   z-index: 9997;
   transition: all 0.5s;
   padding: 0 15px;
-  background: #040b14;
+  background: var(--header-bg-color);
   overflow-y: auto;
 }
 
@@ -87,7 +212,7 @@ h6 {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid #2c2f3f;
+  border: 8px solid var(--profile-border-color);
 }
 
 #header .profile h1 {
@@ -102,15 +227,15 @@ h6 {
 
 #header .profile h1 a,
 #header .profile h1 a:hover {
-  color: #fff;
+  color: var(--hero-text-color); /* Assuming h1 in profile is similar to hero text */
   text-decoration: none;
 }
 
 #header .profile .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #212431;
-  color: #fff;
+  background: var(--social-links-bg-color);
+  color: var(--icon-color);
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -122,8 +247,8 @@ h6 {
 }
 
 #header .profile .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
+  background: var(--social-links-hover-bg-color);
+  color: var(--icon-color);
   text-decoration: none;
 }
 
@@ -176,7 +301,7 @@ h6 {
 .nav-menu a:focus {
   display: flex;
   align-items: center;
-  color: #a8a9b4;
+  color: var(--nav-text-color);
   padding: 12px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
@@ -187,7 +312,7 @@ h6 {
 .nav-menu a:focus i {
   font-size: 24px;
   padding-right: 8px;
-  color: #6f7180;
+  color: var(--nav-icon-color);
 }
 
 .nav-menu a:hover,
@@ -195,14 +320,14 @@ h6 {
 .nav-menu .active:focus,
 .nav-menu li:hover>a {
   text-decoration: none;
-  color: #fff;
+  color: var(--nav-active-text-color);
 }
 
 .nav-menu a:hover i,
 .nav-menu .active i,
 .nav-menu .active:focus i,
 .nav-menu li:hover>a i {
-  color: #149ddd;
+  color: var(--nav-active-icon-color);
 }
 
 /* Mobile Navigation */
@@ -215,8 +340,8 @@ h6 {
   font-size: 24px;
   transition: all 0.4s;
   outline: none !important;
-  background-color: #149ddd;
-  color: #fff;
+  background-color: var(--icon-bg-color);
+  color: var(--icon-color);
   width: 40px;
   height: 40px;
   display: inline-flex;
@@ -247,7 +372,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(5, 13, 24, 0.3);
+  background: var(--hero-overlay-bg-color);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -267,21 +392,21 @@ h6 {
   font-size: 64px;
   font-weight: 700;
   line-height: 56px;
-  color: #fff;
+  color: var(--hero-text-color);
 }
 
 #hero p {
-  color: #fff;
+  color: var(--hero-text-color);
   margin-bottom: 50px;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
 }
 
 #hero p span {
-  color: #fff;
+  color: var(--hero-text-color);
   padding-bottom: 4px;
   letter-spacing: 1px;
-  border-bottom: 3px solid #149ddd;
+  border-bottom: 3px solid var(--link-color); /* Or a specific hero accent color if defined */
 }
 
 @media (min-width: 1024px) {
@@ -312,7 +437,7 @@ section {
 }
 
 .section-bg {
-  background: #f5f8fd;
+  background: var(--secondary-bg-color);
 }
 
 .section-title {
@@ -325,7 +450,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
+  color: var(--heading-color);
 }
 
 .section-title h2::after {
@@ -334,7 +459,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #149ddd;
+  background: var(--link-color); /* Or a specific accent color */
   bottom: 0;
   left: 0;
 }
@@ -349,7 +474,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #173b6c;
+  color: var(--heading-color);
 }
 
 .about .content ul {
@@ -370,7 +495,7 @@ section {
 .about .content ul i {
   font-size: 16px;
   margin-right: 5px;
-  color: #149ddd;
+  color: var(--link-color); /* Or a specific icon color */
   line-height: 0;
 }
 
@@ -393,7 +518,7 @@ section {
 .facts .count-box i {
   display: block;
   font-size: 44px;
-  color: #149ddd;
+  color: var(--link-color); /* Or a specific icon color */
   float: left;
   line-height: 0;
 }
@@ -403,7 +528,7 @@ section {
   line-height: 40px;
   display: block;
   font-weight: 700;
-  color: #050d18;
+  color: var(--facts-count-color);
   margin-left: 60px;
 }
 
@@ -412,21 +537,21 @@ section {
   margin: 0 0 0 60px;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
-  color: #122f57;
+  color: var(--facts-text-color);
 }
 
 .facts .count-box a {
   font-weight: 600;
   display: block;
   margin-top: 20px;
-  color: #122f57;
+  color: var(--facts-text-color);
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   transition: ease-in-out 0.3s;
 }
 
 .facts .count-box a:hover {
-  color: #1f5297;
+  color: var(--link-hover-color); /* Assuming similar hover behavior */
 }
 
 /*--------------------------------------------------------------
@@ -446,7 +571,7 @@ section {
   display: block;
   font-weight: 600;
   font-family: "Poppins", sans-serif;
-  color: #050d18;
+  color: var(--text-color);
 }
 
 .skills .progress .skill .val {
@@ -455,7 +580,7 @@ section {
 }
 
 .skills .progress-bar-wrap {
-  background: #dce8f8;
+  background: var(--skills-bar-bg-color);
   height: 10px;
 }
 
@@ -463,7 +588,7 @@ section {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #149ddd;
+  background-color: var(--skills-bar-fill-color);
 }
 
 /*--------------------------------------------------------------
@@ -474,13 +599,13 @@ section {
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: #050d18;
+  color: var(--heading-color); /* Assuming it's a heading */
 }
 
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #1f5297;
+  border-left: 2px solid var(--resume-item-border-color);
   position: relative;
 }
 
@@ -490,13 +615,13 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: #050d18;
+  color: var(--heading-color); /* Assuming it's a heading */
   margin-bottom: 10px;
 }
 
 .resume .resume-item h5 {
   font-size: 16px;
-  background: #e4edf9;
+  background: var(--resume-item-bg-color);
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
@@ -523,8 +648,8 @@ section {
   border-radius: 50px;
   left: -9px;
   top: 0;
-  background: #fff;
-  border: 2px solid #1f5297;
+  background: var(--primary-bg-color); /* Or a specific dot color */
+  border: 2px solid var(--resume-item-border-color);
 }
 
 /*--------------------------------------------------------------
@@ -539,7 +664,7 @@ section {
   margin: 0 auto 35px auto;
   list-style: none;
   text-align: center;
-  background: #fff;
+  background: var(--portfolio-flters-bg-color);
   border-radius: 50px;
   padding: 2px 15px;
 }
@@ -552,14 +677,14 @@ section {
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-  color: #272829;
+  color: var(--portfolio-flters-text-color);
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
 }
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  color: #149ddd;
+  color: var(--portfolio-flters-active-text-color);
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -575,7 +700,7 @@ section {
 
 .portfolio .portfolio-wrap::before {
   content: "";
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--portfolio-wrap-bg-color);
   position: absolute;
   left: 0;
   right: 0;
@@ -599,20 +724,20 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-links a {
-  color: #fff;
+  color: var(--icon-color); /* Assuming icons are white on colored bg */
   font-size: 28px;
   text-align: center;
-  background: rgba(20, 157, 221, 0.75);
+  background: var(--portfolio-links-bg-color);
   transition: 0.3s;
   width: 50%;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  background: rgba(20, 157, 221, 0.95);
+  background: var(--portfolio-links-hover-bg-color);
 }
 
 .portfolio .portfolio-wrap .portfolio-links a+a {
-  border-left: 1px solid #37b3ed;
+  border-left: 1px solid var(--link-hover-color); /* Or a specific border color */
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -647,18 +772,18 @@ section {
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: #fff;
+  background-color: var(--primary-bg-color); /* Assuming bullets are on primary bg */
   opacity: 1;
-  border: 1px solid #149ddd;
+  border: 1px solid var(--link-color);
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #149ddd;
+  background-color: var(--link-color);
 }
 
 .portfolio-details .portfolio-info {
   padding: 30px;
-  box-shadow: 0px 0 30px rgba(5, 13, 24, 0.08);
+  box-shadow: 0px 0 30px var(--portfolio-details-box-shadow-color);
 }
 
 .portfolio-details .portfolio-info h3 {
@@ -666,7 +791,7 @@ section {
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--portfolio-details-border-color);
 }
 
 .portfolio-details .portfolio-info ul {
@@ -707,24 +832,24 @@ section {
   justify-content: center;
   width: 54px;
   height: 54px;
-  background: #149ddd;
+  background: var(--icon-bg-color);
   border-radius: 50%;
   transition: 0.5s;
-  border: 1px solid #149ddd;
+  border: 1px solid var(--icon-bg-color); /* Assuming border matches background */
 }
 
 .services .icon i {
-  color: #fff;
+  color: var(--icon-color);
   font-size: 24px;
   line-height: 0;
 }
 
 .services .icon-box:hover .icon {
-  background: #fff;
+  background: var(--icon-hover-bg-color);
 }
 
 .services .icon-box:hover .icon i {
-  color: #149ddd;
+  color: var(--icon-hover-color);
 }
 
 .services .title {
@@ -735,11 +860,11 @@ section {
 }
 
 .services .title a {
-  color: #343a40;
+  color: var(--text-color); /* Or --heading-color if more appropriate */
 }
 
 .services .title a:hover {
-  color: #149ddd;
+  color: var(--link-hover-color);
 }
 
 .services .description {
@@ -772,18 +897,18 @@ section {
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0 5px 0;
-  color: #111;
+  color: var(--testimonial-item-text-color);
 }
 
 .testimonials .testimonial-item h4 {
   font-size: 14px;
-  color: #999;
+  color: var(--testimonial-item-meta-color);
   margin: 0;
 }
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: #c3e8fa;
+  color: var(--testimonial-item-quote-icon-color);
   font-size: 26px;
 }
 
@@ -804,18 +929,18 @@ section {
   font-style: italic;
   margin: 0 15px 15px 15px;
   padding: 20px;
-  background: #fff;
+  background: var(--testimonial-item-bg-color);
   position: relative;
   margin-bottom: 35px;
   border-radius: 6px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 15px var(--testimonial-item-box-shadow-color);
 }
 
 .testimonials .testimonial-item p::after {
   content: "";
   width: 0;
   height: 0;
-  border-top: 20px solid #fff;
+  border-top: 20px solid var(--testimonial-item-bg-color);
   border-right: 20px solid transparent;
   border-left: 20px solid transparent;
   position: absolute;
@@ -831,13 +956,13 @@ section {
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: #fff;
+  background-color: var(--primary-bg-color); /* Assuming bullets on primary bg */
   opacity: 1;
-  border: 1px solid #149ddd;
+  border: 1px solid var(--link-color);
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #149ddd;
+  background-color: var(--link-color);
 }
 
 /*--------------------------------------------------------------
@@ -849,18 +974,18 @@ section {
 
 .contact .info {
   padding: 30px;
-  background: #fff;
+  background: var(--contact-info-bg-color);
   width: 100%;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 24px 0 var(--contact-info-box-shadow-color);
 }
 
 .contact .info i {
   font-size: 20px;
-  color: #149ddd;
+  color: var(--contact-info-icon-color);
   float: left;
   width: 44px;
   height: 44px;
-  background: #dff3fc;
+  background: var(--contact-info-icon-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -873,14 +998,14 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #050d18;
+  color: var(--heading-color); /* Assuming it's a heading */
 }
 
 .contact .info p {
   padding: 0 0 10px 60px;
   margin-bottom: 20px;
   font-size: 14px;
-  color: #173b6c;
+  color: var(--text-color); /* Or --heading-color if more appropriate */
 }
 
 .contact .info .email p {
@@ -894,8 +1019,8 @@ section {
 .contact .info .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #333;
-  color: #fff;
+  background: var(--social-links-bg-color); /* Re-using from header, adjust if needed */
+  color: var(--icon-color); /* Re-using from header, adjust if needed */
   line-height: 1;
   padding: 8px 0;
   border-radius: 50%;
@@ -907,22 +1032,22 @@ section {
 }
 
 .contact .info .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
+  background: var(--social-links-hover-bg-color); /* Re-using from header */
+  color: var(--icon-color); /* Re-using from header */
 }
 
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-  background: #149ddd;
-  color: #fff;
+  background: var(--contact-info-icon-hover-bg-color);
+  color: var(--contact-info-icon-hover-text-color);
 }
 
 .contact .php-email-form {
   width: 100%;
   padding: 30px;
-  background: #fff;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  background: var(--contact-form-bg-color);
+  box-shadow: 0 0 24px 0 var(--contact-form-box-shadow-color);
 }
 
 .contact .php-email-form .form-group {
@@ -1002,16 +1127,16 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #149ddd;
+  background: var(--contact-form-button-bg-color);
   border: 0;
   padding: 10px 24px;
-  color: #fff;
+  color: var(--contact-form-button-text-color);
   transition: 0.4s;
   border-radius: 4px;
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #37b3ed;
+  background: var(--contact-form-button-hover-bg-color);
 }
 
 @keyframes animate-loading {
@@ -1029,7 +1154,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 20px 0;
-  background: #f9f9f9;
+  background: var(--breadcrumbs-bg-color);
 }
 
 .breadcrumbs h2 {
@@ -1053,7 +1178,7 @@ section {
 .breadcrumbs ol li+li::before {
   display: inline-block;
   padding-right: 10px;
-  color: #0e2442;
+  color: var(--breadcrumbs-link-color);
   content: "/";
 }
 
@@ -1077,8 +1202,8 @@ section {
 
 .gallery .gallery-item {
   overflow: hidden;
-  border-right: 3px solid #454035;
-  border-bottom: 3px solid #454035;
+  border-right: 3px solid var(--profile-border-color); /* Assuming similar to profile border */
+  border-bottom: 3px solid var(--profile-border-color); /* Assuming similar to profile border */
   height: 190px;
   object-fit: cover;
 }
@@ -1095,14 +1220,14 @@ section {
 --------------------------------------------------------------*/
 #footer {
   padding: 15px;
-  color: #f4f6fd;
+  color: var(--footer-text-color);
   font-size: 14px;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 300px;
   z-index: 9999;
-  background: #040b14;
+  background: var(--footer-bg-color);
 }
 
 #footer .copyright {
@@ -1113,7 +1238,7 @@ section {
   padding-top: 5px;
   text-align: center;
   font-size: 13px;
-  color: #eaebf0;
+  color: var(--footer-credits-text-color);
 }
 
 @media (max-width: 1199px) {
@@ -1146,7 +1271,7 @@ section {
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
-  color: #272829;
+  color: var(--text-color); /* General text color */
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
   border-radius: 4px;
@@ -1154,10 +1279,62 @@ section {
 
 #timeline-flters li:hover,
 #timeline-flters li.filter-active {
-  color: #fff;
-  background: #149ddd;
+  color: var(--timeline-filter-text-color);
+  background: var(--timeline-filter-bg-color);
 }
 
 #timeline-flters li:last-child {
   margin-right: 0;
+}
+
+/*--------------------------------------------------------------
+# Dark Mode Toggle Button
+--------------------------------------------------------------*/
+.dark-mode-toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+}
+
+#darkModeToggle {
+  background-color: var(--secondary-bg-color); /* Use a theme-aware background */
+  border: 1px solid var(--nav-icon-color); /* Use a theme-aware border */
+  color: var(--nav-icon-color); /* Icon color, consistent with nav icons */
+  padding: 0.5rem 0.75rem; /* Adjusted padding */
+  font-size: 1rem; /* Adjusted font size */
+  border-radius: 50px; /* Circular button */
+  width: 40px; /* Explicit width */
+  height: 40px; /* Explicit height */
+  display: inline-flex; /* For centering icon */
+  align-items: center; /* For centering icon */
+  justify-content: center; /* For centering icon */
+  transition: all 0.3s ease-in-out;
+}
+
+#darkModeToggle:hover {
+  background-color: var(--nav-active-icon-color); /* Use nav active icon color for hover background */
+  color: var(--header-bg-color); /* Icon color on hover, ensure contrast */
+  border-color: var(--nav-active-icon-color); /* Border color on hover */
+}
+
+#darkModeToggle i {
+  line-height: 1; /* Ensure icon is vertically centered */
+}
+
+/* Specific styles for dark mode toggle button when dark mode is active */
+/* The general #darkModeToggle rules should adapt well due to variable changes. */
+/* We can add specific overrides if needed, but let's see how variables handle it first. */
+/* For example, hover colors might need specific dark mode considerations if the above isn't ideal */
+
+body.dark-mode #darkModeToggle {
+  background-color: var(--secondary-bg-color); /* Adapts to dark secondary bg */
+  border: 1px solid var(--nav-icon-color);   /* Adapts to dark nav icon color */
+  color: var(--nav-icon-color);            /* Adapts to dark nav icon color */
+}
+
+body.dark-mode #darkModeToggle:hover {
+  background-color: var(--nav-active-icon-color); /* Adapts to dark nav active icon color */
+  color: var(--header-bg-color); /* Ensure this provides good contrast on dark active icon color */
+  border-color: var(--nav-active-icon-color);   /* Adapts */
 }
